@@ -35,7 +35,7 @@ Then making these changes to the $HADOOP_HOME/conf files:
     -
     +    <property>
     +        <name>hadoop.tmp.dir</name>
-    +        <value>/Volumes/home/hadoop</value>
+    +        <value>/usr/local/tmp/hadoop</value>
     +        <description>A base for other temporary directories.</description>
     +    </property>
     +     
@@ -72,15 +72,32 @@ Then making these changes to the $HADOOP_HOME/conf files:
     +        <value>localhost:8021</value>
     +    </property>    
      </configuration>
+    
+You can then format the hadoop file system:
 
+    hadoop namenode -format 
+ 
+(this will create a `dfs` directory in the directory you specified for the `hadoop.tmp.dir` property in core-site.xml. 
 
 Then you should be able to run hadoop with:
 
     hadoopstart
 
-And then run these commands to get the wordcount going:
+(this command will ssh into localhost, so you might need to set up your ssh public key in your own authorized_keys file to avoid getting prompted for a password for each one)    
+
+You should be able to get to the [job tracker](http://localhost:50030) and the [name node](http://localhost:50070) in a web browser now.
+
+To run the wordcount sample, use these commands:
+
+1. copy the test files into the hadoop distributed file system:
 
     bin/copy-input-to-hadoop.sh 
+
+2. Compile and jar up the `WordCount.java` application. 
+    
     bin/jar.sh
+
+3. then run the app and see the results
+
     bin/run.sh
 
