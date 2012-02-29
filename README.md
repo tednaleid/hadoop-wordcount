@@ -89,19 +89,15 @@ You should be able to get to the [job tracker](http://localhost:50030) and the [
 
 To run the wordcount sample, use these commands:
 
-1. copy the test files into the hadoop distributed file system:
-
-
+first, copy the test files into the hadoop distributed file system:
   
     bin/copy-input-to-hadoop.sh 
 
-2. Compile and jar up the `WordCount.java` application. 
-
+then, compile and jar up the `WordCount.java` application. 
     
     bin/jar.sh
 
-3. then run the app and see the results
-
+lastly, run the app and see the results
 
     bin/run.sh
 
