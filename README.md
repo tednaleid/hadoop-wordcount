@@ -1,4 +1,4 @@
-working version of [Hadoop WordCount](http://wiki.apache.org/hadoop/WordCount) app that's the 'hello world" of hadoop jobs.
+This repo holds a working version of [Hadoop WordCount](http://wiki.apache.org/hadoop/WordCount) app that's the 'hello world" of hadoop jobs.
 
 The docs on the hadoop wiki are a bit unclear/miselading and I also needed to make a couple of tweaks to the script, including adding the jar to the classpath with `setJarByClass` so the full test jar can be found.
 
