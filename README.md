@@ -1,12 +1,12 @@
-working version of [Hadoop WordCount] app that's the 'hello world" of hadoop jobs.
+working version of [Hadoop WordCount](http://wiki.apache.org/hadoop/WordCount) app that's the 'hello world" of hadoop jobs.
 
-The docs on the hadoop wiki are a bit unclear/miselading and I also needed to make a couple of tweaks to the script, including adding the jar to the classpath.
+The docs on the hadoop wiki are a bit unclear/miselading and I also needed to make a couple of tweaks to the script, including adding the jar to the classpath with `setJarByClass` so the full test jar can be found.
 
-This runs successfully on 
+This runs successfully on the Cloudera cdh3u3 distro, and I think should also work on other recent versions such as the Apache "0.20.205.0" release.
 
     cd /usr/local
     curl -O http://archive.cloudera.com/cdh/3/hadoop-0.20.2-cdh3u3.tar.gz
-    tar xzvf cloudera-demo-vm-cdh3u3-vmware.tar.gz    
+    tar xzvf tar xzvf hadoop-0.20.2-cdh3u3.tar.gz    
 
 And adding these things to your bashrc/zshrc:
 
@@ -22,9 +22,7 @@ And adding these things to your bashrc/zshrc:
     alias hadoopstop='stop-all.sh'
     alias hadoopstatus="jps | egrep '(TaskTracker|JobTracker|DataNode|NameNode|SecondaryNameNode)'"
 
-
 Then making these changes to the $HADOOP_HOME/conf files:
-
 
     diff --git a/conf/core-site.xml b/conf/core-site.xml
     index 970c8fe..4a08cc2 100644
