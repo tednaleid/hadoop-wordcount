@@ -21,6 +21,12 @@ And adding these things to your bashrc/zshrc:
     alias hadoopstart='start-all.sh'
     alias hadoopstop='stop-all.sh'
     alias hadoopstatus="jps | egrep '(TaskTracker|JobTracker|DataNode|NameNode|SecondaryNameNode)'"
+    
+    # hadoop dfs commands
+    for CMD in "ls" "cat" "tail" "rm" "rmr" "mkdir" "chown" "chmod"; do
+        alias "h$CMD"="hadoop dfs -$CMD"
+    done
+
 
 Then making these changes to the $HADOOP_HOME/conf files:
 
