@@ -6,7 +6,7 @@ This runs successfully on the Cloudera cdh3u3 distro, and I think should also wo
 
     cd /usr/local
     curl -O http://archive.cloudera.com/cdh/3/hadoop-0.20.2-cdh3u3.tar.gz
-    tar xzvf tar xzvf hadoop-0.20.2-cdh3u3.tar.gz    
+    tar xzvf hadoop-0.20.2-cdh3u3.tar.gz    
 
 And adding these things to your bashrc/zshrc:
 
